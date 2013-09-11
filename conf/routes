@@ -4,7 +4,9 @@
 
 # Home page
 GET        /                    controllers.Application.index()
-GET        /about                    controllers.Application.about()
+GET        /about               controllers.Application.about()
+# New route to users method
+GET     /users                  controllers.Application.sayHello()
 
 # Map static resources from the /public folder to the /assets URL path
 GET        /assets/*file        controllers.Assets.at(path="/public", file)
