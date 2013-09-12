@@ -4,10 +4,13 @@
 # --- !Ups
 
 create table my_user (
-  email                     varchar(255),
+  email                     varchar(255) not null,
   fullname                  varchar(255),
-  is_admin                  boolean)
+  is_admin                  boolean,
+  constraint pk_my_user primary key (email))
 ;
+
+create sequence my_user_seq;
 
 
 
@@ -15,4 +18,6 @@ create table my_user (
 # --- !Downs
 
 drop table if exists my_user cascade;
+
+drop sequence if exists my_user_seq;
 

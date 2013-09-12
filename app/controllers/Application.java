@@ -23,15 +23,23 @@ public class Application extends Controller {
         return ok(about.render());
     }
 
-//    public static void users() {
-//        List<User> users = User.findAll();
-//        renderJSON(users);
-//    }
+    public static Result users() {
+        List<User> users = User.findAll();
+
+        ObjectNode result = Json.newObject();
+        result.put("name",users.get(0).toString());
+
+        return ok(result);
+
+    }
 
     @BodyParser.Of(BodyParser.Json.class)
     public static Result sayHello() {
+        //create a new JSON response
         ObjectNode result = Json.newObject();
-        String name = result.findPath("name").getTextValue();
+
+        String name = Json.stringify(result);
+
         if(name == null) {
             result.put("status", "KO");
             result.put("message", "Missing parameter [name]");

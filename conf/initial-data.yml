@@ -1,8 +1,32 @@
-User(bob):
-  email: bob@gmail.com
-  fullname: Bob Clark
-  isAdmin: false
-User(joe):
-  email: joe@gmail.com
-  fullname: Joe Smith
-  isAdmin: false
+#User(bob):
+#  email: bob@gmail.com
+#  fullname: Bob Clark
+#  isAdmin: false
+#User(joe):
+#  email: joe@gmail.com
+#  fullname: Joe Smith
+#  isAdmin: false
+#
+  # Users
+
+  users:
+
+      - !!models.User
+          email:      guillaume@sample.com
+          fullname:       Guillaume Bort
+          isAdmin:   false
+
+      - !!models.User
+          email:      maxime@sample.com
+          fullname:       Maxime Dantec
+          isAdmin:   false
+
+      - !!models.User
+          email:      sadek@sample.com
+          fullname:       Sadek Drobi
+          isAdmin:   false
+
+      - !!models.User
+          email:      erwan@sample.com
+          fullname:       Erwan Loisant
+          isAdmin:   false
